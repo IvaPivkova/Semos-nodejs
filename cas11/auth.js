@@ -6,3 +6,14 @@ exports.isLogged = function(req, res, next){
 		res.redirect("/login");
 	}
 }
+
+exports.isAdmin = function(req, res, next) {
+
+	if(req.session.type == "admin"){
+		next();
+	}
+	else{
+		res.redirect("/profile");
+	}
+
+}
