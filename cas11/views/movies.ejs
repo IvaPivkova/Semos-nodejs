@@ -1,7 +1,9 @@
 Movies page
-
+<br>
 <% for(let i=0; i< videa.length; i++) { %>
 
-	<h1> <%= videa[i].title %>  </h1>
+	<a href="/showMovie?title=<%=videa[i].title%>" > <%= videa[i].title %>  </a>
+
+	<br>
 
 <% } %>

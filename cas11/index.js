@@ -101,6 +101,16 @@ app.post("/addMovie", (req, res) =>{
 
 })
 
+app.get("/showMovie", (req, res) =>{
+	let title = req.query.title;
+
+	for(let i=0; i<filmovi.length; i++){
+		if(filmovi[i].title == title){
+			res.render("movieDetails", {film: filmovi[i]})
+		}
+	}
+})
+
 // checks if there is already user with the email
 function checkForEmail(mail){
 	for(let i=0; i<korisnici.length; i++){
